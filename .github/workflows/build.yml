@@ -21,9 +21,22 @@ jobs:
       -
          name: build dist
          run: yarn build
+         
+      - name: Commit files
+        run: |
+          git add .
+          git config --local user.email "su@nn.ci"
+          git config --local user.name "Saakura"
+          git commit --allow-empty -m "update dist" -a
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
       -
         name: Upload artifacts dist
         uses: actions/upload-artifact@v2
         with: 
-          name: dist
-          path: dist
+          name: index
+          path: dist/index.html
