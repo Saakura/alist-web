@@ -1,6 +1,6 @@
 
 module.exports = {
-  publicPath: 'https://cdn.jsdelivr.net/gh/Saakura/alist-web@main/',
+  publicPath: 'https://cdn.jsdelivr.net/gh/Saakura/alist-web@main/dist/',
   outputDir: 'dist',
   //放置生成的静态资源 (js、css、img、fonts) 的目录
   assetsDir: 'static',
